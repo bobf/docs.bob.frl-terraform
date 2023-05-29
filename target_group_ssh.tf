@@ -1,10 +1,3 @@
-resource "aws_lb" "nlb_public" {
-  name = "docs-bob-frl-public-gateway"
-  load_balancer_type = "network"
-  internal = false
-  subnets = [aws_subnet.public_subnet_01.id, aws_subnet.public_subnet_02.id]
-}
-
 resource "aws_lb_target_group" "tg_public_ssh" {
   name = "tg-public-ssh"
   vpc_id = aws_vpc.vpc_public.id
